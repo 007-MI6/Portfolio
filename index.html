@@ -1,0 +1,42 @@
+import { useEffect } from "react";
+import TextureOverlay from "../components/portfolio/TextureOverlay";
+import Navigation from "../components/portfolio/Navigation";
+import SplashSection from "../components/portfolio/SplashSection";
+import HeroSection from "../components/portfolio/HeroSection";
+import MarqueeStrip from "../components/portfolio/MarqueeStrip";
+import JourneySection from "../components/portfolio/JourneySection";
+import StrengthsSection from "../components/portfolio/StrengthsSection";
+import ProfileSection from "../components/portfolio/ProfileSection";
+import WhyMeSection from "../components/portfolio/WhyMeSection";
+import ConnectSection from "../components/portfolio/ConnectSection";
+import ChatBot from "../components/portfolio/ChatBot";
+
+export default function Portfolio() {
+  useEffect(() => {
+    // Force dark background for brushed metal theme
+    document.documentElement.classList.add("dark");
+    document.documentElement.style.background = "#0c0c0e";
+  }, []);
+
+  return (
+    <div className="relative min-h-screen font-body">
+      <TextureOverlay />
+      <Navigation />
+      <main>
+        <SplashSection />
+        {/* About — personal statement, journey, strengths */}
+        <HeroSection />
+        <MarqueeStrip />
+        <JourneySection />
+        <StrengthsSection />
+        {/* Academics — tabs: Academic Results, Co-Curriculum, Testimonial */}
+        <ProfileSection />
+        {/* Why Me */}
+        <WhyMeSection />
+        {/* Connect */}
+        <ConnectSection />
+      </main>
+      <ChatBot />
+    </div>
+  );
+}
